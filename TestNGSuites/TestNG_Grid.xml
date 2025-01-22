@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+
+<suite thread-count="3" verbose="1" name="Sample Suite 1" annotations="JDK" parallel="tests">
+
+<listeners>
+<listener class-name="com.listener.TestListener" /> 
+</listeners>
+
+<!-- To run entire testsuite in Grid mode -->
+   
+   <test name="Email">
+       <parameter name="browserType" value="firefox"/>
+        <classes>
+            <class name="com.testsuite.email.EmailFunctionalities" />           		           		
+        </classes>
+    </test> 
+
+    
+    <test name="contacts">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="com.testsuite.contactsandfooter.ContactsAndFooters">           		
+            </class>            		
+        </classes>
+    </test>
+
+    
+	<test name="other">
+	    <parameter name="browserType" value="iexplore"/>
+        <classes>
+            <class name="com.testsuite.other.OtherLinks">
+            </class>            		
+        </classes>
+    </test>       
+
+</suite>
+
+
