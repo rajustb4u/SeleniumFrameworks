@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+
+<suite thread-count="1" verbose="1" name="Gmail Suite" annotations="JDK" parallel="classes">
+
+<listeners>
+<listener class-name="com.listener.TestListener" /> 
+</listeners>
+
+<!-- To run entire tests in linear mode -->
+   <test name="RunTests">
+       <parameter name="browserType" value="firefox"/>
+       <classes>
+        	<class name="com.testsuite.email.EmailFunctionalities"/>
+			<class name="com.testsuite.contactsandfooter.ContactsAndFooters"/> 
+            <class name="com.testsuite.other.OtherLinks"/> 
+       </classes> 
+    </test>    
+    
+    
+    
+<!--     To run complete package
+	<test name="Regression1">
+		<packages>
+			<package name="Com.TestSuite.Module_SendMail" />
+		</packages>
+	</test>
+ 
+
+	<test name="Test1">
+  		<groups>
+    		<run>
+				<include name="regression"/>
+			</run>
+		</groups>
+		<classes>
+            <class name="Com.TestSuite.Module_SendMail.SendMail_TestSuite"/>
+        </classes>
+	</test>	
+-->
+</suite>
